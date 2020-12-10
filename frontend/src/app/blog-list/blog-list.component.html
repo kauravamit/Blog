@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="v-middle">
+            <div class="v-middle-inner">
+                <div class="max-wid ">
+                    <h2>Create New Blog</h2>
+
+                    <form>
+                        <label for="fname">Content:</label><br>
+                        <textarea class="form-control" [(ngModel)]="content" name="content" id="" cols="30"
+                            rows="10"></textarea><br>
+                        <button type="button" class="btn btn-primary" value="Submit" (click)="submit()">Submit</button>
+                    </form>
+
+                    <div *ngFor="let list of lists">
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h3 (click)="onclick(list._id)" style="cursor: pointer;">{{list.content}}</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

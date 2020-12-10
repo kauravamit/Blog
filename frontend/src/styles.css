@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    font-weight: 100;
+}

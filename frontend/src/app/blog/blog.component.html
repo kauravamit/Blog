@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2 class="text-center head1">Blog</h2>
+
+            <h3 class="text-center">{{blog["content"]}}</h3>
+         
+            <h3 class="text-center">{{blog.children['length']}} comments</h3>
+
+
+            <div class="max-wid">
+                <form action="/action_page.php">
+                    <label for="fname">Post Comments</label><br>
+                    <input type="text" class="form-control" [(ngModel)]="comment" name="comment"><br>
+                    <button type="button" class="btn btn-primary" value="Submit" (click)="submit(0)">Submit</button>
+                </form>
+            </div>
+
+            <div class="box1">
+                <h2 class="text-center">Comments</h2>
+                <hr>
+
+                <div class="text-center" *ngFor="let list of comments; let i = index">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>{{list.content}}</h2>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 (click)="onclick(list._id,i)" style="cursor: pointer;">{{list.children['length']}} replies</h3>
+                            <h3>reply</h3>
+                            <input type="text" class="form-control" [(ngModel)]="comment" name="comment"><br>
+                            <button type="button" class="btn btn-primary" value="Submit"
+                                (click)="submit(list._id)">Submit</button>
+                            <div *ngIf='replied[i]!=null'>
+
+                                <div >Replies
+                                    <div *ngFor='let reply of replied[i]'>
+                                        <h2>{{reply.content}}</h2>
+                                   </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

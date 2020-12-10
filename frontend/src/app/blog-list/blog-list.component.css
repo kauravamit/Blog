@@ -1,0 +1,17 @@
+.v-middle {
+    position: absolute;
+    display: table;
+    height: 100vh;
+    width: 100%;
+}
+
+.v-middle-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.max-wid {
+    max-width: 500px;
+    margin: 0 auto;
+
+}
